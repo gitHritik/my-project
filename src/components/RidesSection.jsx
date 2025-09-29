@@ -1,23 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { rides } from "../ridesData";
 import Navbar from './navbar/Navbar';
 import CategorySidebar from './CategorySidebar';
 import RideCard from './RideCard';
 import CarouselControls from './CarouselControls';
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 
 
 
 const RidesSection = () => {
+
+
     const [activeCategory, setActiveCategory] = useState("Land");
     const [currentIndex, setCurrentIndex] = useState(0);
-
-
-
 
     const filteredRides = rides.filter((r) => r.category === activeCategory);
     const itemsPerSlide = 3;
     const maxIndex = Math.max(0, filteredRides.length - itemsPerSlide);
+
+    console.log(maxIndex)
+
+    //auto scroll featuer
+    // Auto-scroll effect
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+        }, 4000); // scroll every 4 seconds
+
+        return () => clearInterval(interval);
+    }, [maxIndex, activeCategory]);
+
+
 
     const handlePrev = () => {
         setCurrentIndex((prev) => (prev > 0 ? prev - 1 : maxIndex));
@@ -32,6 +47,12 @@ const RidesSection = () => {
         setCurrentIndex(0); // Reset carousel when category changes
     };
 
+    if (currentIndex * (100 / itemsPerSlide) > 100) {
+        setCurrentIndex(0);
+    }
+    console.log(currentIndex)
+    // console.log((filteredRides.length * 100) / itemsPerSlide)
+
     return (
         <div className=" bg-gray-50">
             {/* Navbar */}
@@ -45,7 +66,7 @@ const RidesSection = () => {
 
                 <div className="max-w-7xl mx-auto flex min-h-screen">
                     {/* Sidebar */}
-                    <div className="w-80 py-16">
+                    <div className="w-100 py-16">
                         <CategorySidebar active={activeCategory} onSelect={handleCategoryChange} />
                     </div>
 
@@ -60,21 +81,21 @@ const RidesSection = () => {
 
                         {/* Cards Grid */}
                         <div className="overflow-hidden">
-                            <div
-                                className="flex transition-transform duration-700"
+                            <motion.div
+                                className="flex flex-nowrap gap-6"
+                                animate={{
+                                    x: `-${currentIndex * (100 / itemsPerSlide)}%`
+                                }}
+                                transition={{ duration: 0.7, ease: "easeInOut" }}
                                 style={{ transform: `translateX(-${currentIndex * (100 / itemsPerSlide)}%)` }}
                             >
-                                <div className="grid grid-cols-3 gap-8 mb-12">
-                                    {filteredRides.slice(currentIndex, currentIndex + itemsPerSlide).map((ride) => (
-                                        <RideCard key={ride.id} ride={ride} />
+                                <div className="flex flex-nowrap gap-6">
+                                    {filteredRides.concat(filteredRides).map((ride, index) => (
+                                        <RideCard key={index} ride={ride} />
                                     ))}
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
-
-
-
-
 
                         {/* Controls and Button */}
                         <div className="flex justify-between items-center">

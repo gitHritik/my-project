@@ -80,7 +80,7 @@ export const rides = [
     category: "Kids"
   },
   {
-    id: 1,
+    id: 11,
     title: "Sky Ring",
     location: "Kochi",
     description: "Shoot up a sky-high tower for a birds-eye view of Wonderla Kochi!",
@@ -88,7 +88,7 @@ export const rides = [
     category: "Land"
   },
   {
-    id: 2,
+    id: 12,
     title: "Recoil",
     location: "Bangalore",
     description: "India's first-ever action-packed reverse looping roller coaster ride!",
@@ -96,7 +96,7 @@ export const rides = [
     category: "Land"
   },
   {
-    id: 3,
+    id: 13,
     title: "Mission Interstellar",
     location: "Hyderabad",
     description: "Blast through cosmic chaos on a wild, out-of-this-world space ride!",
@@ -104,7 +104,7 @@ export const rides = [
     category: "Land"
   },
   {
-    id: 4,
+    id: 14,
     title: "Equinox",
     location: "Bhubaneswar",
     description: "A thrill monster that churns you 360 degrees in a gyroscope!",
@@ -112,7 +112,7 @@ export const rides = [
     category: "Land"
   },
   {
-    id: 5,
+    id: 15,
     title: "Wonder Splash",
     location: "Kochi",
     description: "Giant water slides with thrilling drops and splashes!",
@@ -120,7 +120,7 @@ export const rides = [
     category: "Water"
   },
   {
-    id: 6,
+    id: 16,
     title: "Lazy River",
     location: "Bangalore",
     description: "Float peacefully along our scenic lazy river adventure!",
@@ -128,7 +128,7 @@ export const rides = [
     category: "Water"
   },
   {
-    id: 7,
+    id: 17,
     title: "Wonder Coaster",
     location: "Kochi",
     description: "High-speed thrills with amazing loops and drops!",
@@ -136,7 +136,7 @@ export const rides = [
     category: "Land"
   },
   {
-    id: 8,
+    id: 18,
     title: "Splash Mountain",
     location: "Bangalore",
     description: "Ultimate water adventure with massive slides!",
@@ -144,7 +144,7 @@ export const rides = [
     category: "Water"
   },
   {
-    id: 9,
+    id: 19,
     title: "Mini Land",
     location: "Hyderabad",
     description: "Specially designed rides and attractions for little adventurers!",
@@ -152,7 +152,7 @@ export const rides = [
     category: "Kids"
   },
   {
-    id: 10,
+    id: 20,
     title: "Rainbow Carousel",
     location: "Bhubaneswar",
     description: "Colorful merry-go-round perfect for young children!",

@@ -6,7 +6,7 @@ const CategorySidebar = ({ active, onSelect }) => {
     ];
 
     return (
-        <div className="relative">
+        <div className="relative w-80 ">
             {/* Curved background */}
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 rounded-r-[120px] transform -translate-x-8"></div>
 

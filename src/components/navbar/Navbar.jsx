@@ -43,7 +43,7 @@ const Navbar = () => {
 
                     <button
                         onClick={() => setIsSidebarOpen(true)}
-                        className="text-gray-800 hover:text-blue-600 p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                        className="text-gray-800 hover:text-blue-600 p-2 cursor-pointer hover:bg-gray-100 rounded-lg transition-colors"
                     >
                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
@@ -71,7 +71,7 @@ const Navbar = () => {
             </nav>
             {isSidebarOpen && (
                 <div
-                    className="fixed inset-0 bg-black/50 z-50 transition-opacity"
+                    className="fixed inset-0 bg-black/50 z-50 transition-opacity cursor-pointer"
                     onClick={() => setIsSidebarOpen(false)}
                 />
             )}
