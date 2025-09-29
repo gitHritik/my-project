@@ -50,7 +50,7 @@ const RidesSection = () => {
     if (currentIndex * (100 / itemsPerSlide) > 100) {
         setCurrentIndex(0);
     }
-    console.log(currentIndex)
+    // console.log(currentIndex)
     // console.log((filteredRides.length * 100) / itemsPerSlide)
 
     return (
@@ -89,23 +89,25 @@ const RidesSection = () => {
                                 transition={{ duration: 0.7, ease: "easeInOut" }}
                                 style={{ transform: `translateX(-${currentIndex * (100 / itemsPerSlide)}%)` }}
                             >
-                                <div className="flex flex-nowrap gap-6">
-                                    {filteredRides.concat(filteredRides).map((ride, index) => (
-                                        <RideCard key={index} ride={ride} />
-                                    ))}
-                                </div>
+
+                                {filteredRides.concat(filteredRides).map((ride, index) => (
+                                    <RideCard key={index} ride={ride} />
+                                ))}
+
                             </motion.div>
                         </div>
 
                         {/* Controls and Button */}
-                        <div className="flex justify-between items-center">
+                        <div className="flex justify-between items-center mt-6 w-[15%] ">
                             <CarouselControls onPrev={handlePrev} onNext={handleNext} />
-                            <button className="bg-yellow-400 text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-500 transition-colors shadow-xl">
+                            <button className="bg-yellow-400  text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-500 transition-colors shadow-xl">
                                 Explore All Rides!
                             </button>
                         </div>
+
                     </div>
                 </div>
+
             </section>
         </div>
     );
